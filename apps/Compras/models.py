@@ -7,10 +7,10 @@ class Pago(models.Model):
     Envio = models.IntegerField(null=False, blank=True)
     Total = models.FloatField(null=False, blank=True)
     Nombre_tarjeta = models.CharField(max_length=100)
-    Mes_tarjeta = models.IntegerField(max_length=2)
-    año_tarjeta = models.IntegerField(max_length=2)
-    CodigoSeg_Tarjeta = models.IntegerField(max_length=3)
-    Numero_tarjeta = models.IntegerField(max_length=16)
+    Mes_tarjeta = models.IntegerField(null=False, blank=True)
+    año_tarjeta = models.IntegerField(null=False, blank=True)
+    CodigoSeg_Tarjeta = models.IntegerField(null=False, blank=True)
+    Numero_tarjeta = models.IntegerField(null=False, blank=True)
 
     def __str__(self):
         return self.Nombre_tarjeta
@@ -22,3 +22,10 @@ class Compras(models.Model):
 
     def __str__(self):
         return self.Pago
+
+class ComprasProducto(models.Model):
+    Productos = models.ForeignKey(Productos, on_delete=models.CASCADE, null=True, blank=True)
+    Compras = models.ForeignKey(Compras, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.Productos

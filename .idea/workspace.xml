@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea68cc31-6589-46c6-8b1c-d3b3a909bf94" name="Default Changelist" comment="" />
+    <list default="true" id="ea68cc31-6589-46c6-8b1c-d3b3a909bf94" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/Compras/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/Compras/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/Compras/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/Compras/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/productos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/productos/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopmak/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopmak/settings.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,47 +19,10 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shopmak/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/productos/apps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/productos/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shopmak/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#631#663#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -60,17 +30,22 @@
         <option value="$PROJECT_DIR$/shopmak/urls.py" />
         <option value="$PROJECT_DIR$/prueba/productos/apps.py" />
         <option value="$PROJECT_DIR$/apps/productos/apps.py" />
+        <option value="$PROJECT_DIR$/apps/Compras/apps.py" />
+        <option value="$PROJECT_DIR$/apps/usuario/apps.py" />
         <option value="$PROJECT_DIR$/shopmak/settings.py" />
+        <option value="$PROJECT_DIR$/apps/usuario/models.py" />
         <option value="$PROJECT_DIR$/apps/productos/models.py" />
+        <option value="$PROJECT_DIR$/apps/Compras/models.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
     <option name="y" value="25" />
     <option name="width" value="650" />
     <option name="height" value="743" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -89,12 +64,6 @@
               <item name="shopmak" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="shopmak" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shopmak" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="productos" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -102,6 +71,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -163,25 +133,27 @@
       <workItem from="1554312397092" duration="758000" />
       <workItem from="1554313183422" duration="38000" />
       <workItem from="1554313253003" duration="14000" />
-      <workItem from="1554313546777" duration="6877000" />
+      <workItem from="1554313546777" duration="9257000" />
+      <workItem from="1554398434844" duration="1066000" />
+      <workItem from="1554400467424" duration="10297000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11444000" />
+    <option name="totallyTimeSpent" value="25187000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="650" height="743" extended-state="4" />
+    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.049668875" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16440542" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Python Console" order="3" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="4" sideWeight="0.49503312" visible="true" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.5049669" side_tool="true" visible="true" weight="0.32954547" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="4" sideWeight="0.49401435" visible="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.5059856" side_tool="true" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5019952" side_tool="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
@@ -234,20 +206,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prueba/productos/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shopmak/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/prueba/productos/apps.py" />
     <entry file="file://$PROJECT_DIR$/shopmak/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -258,6 +217,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/Compras/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/usuario/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/usuario/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/usuario/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/productos/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -265,10 +240,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/usuario/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/usuario/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopmak/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/productos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        <state relative-caret-position="270">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/Compras/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

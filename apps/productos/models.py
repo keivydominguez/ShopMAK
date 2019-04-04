@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Categorias(models.Model):
     Nombre_categoria = models.CharField(max_length=30)
 
@@ -12,7 +13,7 @@ class Productos(models.Model):
     Marca_producto = models.CharField(max_length=15)
     Modelo_producto = models.CharField(max_length=50)
     Precio_producto = models.IntegerField(null=False, blank=True)
-    Cantidad_producto = models.IntegerField(null=False,blank=True)
+    Cantidad_producto = models.IntegerField(null=False, blank=True)
     Descripcion_producto = models.TextField()
     Foto_producto = models.CharField(max_length=50)
     Usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
@@ -22,5 +23,9 @@ class Productos(models.Model):
     def __str__(self):
         return self.Nombre_producto
 
+class Favorito(models.Model):
+    Productos = models.ForeignKey(Productos, on_delete=models.CASCADE, null=True, blank=True)
+    Usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
-
+    def __str__(self):
+        return self.Productos
