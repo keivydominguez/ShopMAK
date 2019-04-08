@@ -6,14 +6,14 @@ class Categorias(models.Model):
     Nombre_categoria = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.Nombre
+        return self.Nombre_categoria
 
 class Productos(models.Model):
     Nombre_producto = models.CharField(max_length=50)
     Marca_producto = models.CharField(max_length=15)
     Modelo_producto = models.CharField(max_length=50)
-    Precio_producto = models.IntegerField(null=False, blank=True)
-    Cantidad_producto = models.IntegerField(null=False, blank=True)
+    Precio_producto = models.FloatField()
+    Cantidad_producto = models.IntegerField()
     Descripcion_producto = models.TextField()
     Foto_producto = models.CharField(max_length=50)
     Usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
@@ -28,4 +28,4 @@ class Favorito(models.Model):
     Usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return self.Productos
+        return self.Productos.Nombre_producto

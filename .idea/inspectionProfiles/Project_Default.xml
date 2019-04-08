@@ -5,6 +5,8 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="django.db.models.OneToManyField" />
+          <option value="shopmak.apps.DjangoSuitConfig" />
+          <option value="shopmak.urls.frontend" />
         </list>
       </option>
     </inspection_tool>
