@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 DJANGO_APPS = [
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,11 +41,12 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-
 ]
 
 LOCAL_APPS = [
     'apps.productos.apps.ProductosConfig',
+    'apps.Compras.apps.ComprasConfig',
+    'apps.usuario.apps.UsuarioConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -64,7 +66,7 @@ ROOT_URLCONF = 'shopmak.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,3 +134,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'ShopMAK',
+    'MENU_ICONS': {
+       'sites': 'icon-leaf',
+        'auth': 'icon-user',
+        'Compras': 'icon-shopping-cart',
+        'Productos': 'icon-tags',
+        'Usuario': 'icon-user',
+    }
+}
