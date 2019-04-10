@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "nombre_producto": "Audífonos Bluetooth Deportivos Tws-t02s Base De Ca",
+    "marca": "Arbily",
+    "modelo": "T02S",
+    "precio": 179.0,
+    "cantidad": 1,
+    "descripcion": "ESPECIFICACIONES\r\nVersión de Bluetooth BT 5.0+CVC 6.0\r\nColor Negro\r\nCapacidad de Batería de Auricular 40mAh\r\nCapacidad de Batería de Caja 500mAh\r\nTiempo de Trabajo 4 horas\r\nTiempo de Carga 1.5 horas",
+    "foto": "wewwewewewwe",
+    "nombre_usuario": "username",
+    "correo": "anateres@correo.com",
+    "categoria": "Tecnologias",
+    "status": "Nuevo"
+  }
+]

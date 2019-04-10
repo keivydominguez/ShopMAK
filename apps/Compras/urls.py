@@ -2,5 +2,5 @@ from django.urls import path
 from .import views
 
 urlpatterns = [
-    path('compras/', views.index, name='index'),
+    path('get_compras/', views.ComprasList.as_view()),
 ]

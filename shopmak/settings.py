@@ -41,6 +41,7 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    'rest_framework',
 ]
 
 LOCAL_APPS = [
@@ -66,7 +67,7 @@ ROOT_URLCONF = 'shopmak.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -144,4 +145,15 @@ SUIT_CONFIG = {
         'Productos': 'icon-tags',
         'Usuario': 'icon-user',
     }
+}
+
+
+
+REST_FRAMEWORK = {
+   # Use Django's standard `django.contrib.auth` permissions,
+   # or allow read-only access for unauthenticated users.
+   'DEFAULT_AUTHENTICATION_CLASSES': (
+       'rest_framework.authentication.TokenAuthentication',
+       'rest_framework.authentication.SessionAuthentication',
+   )
 }

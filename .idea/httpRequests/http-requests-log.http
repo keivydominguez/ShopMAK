@@ -1,0 +1,402 @@
+POST http://127.0.0.1:8000/get_WhisList/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T034329.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_all_products/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T034304.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_WhisList/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T033540.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_compras/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T031558.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_compras/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T031553.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T031523.500.txt
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T031520.500.txt
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T031517.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_compras/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T031120.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_compras/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T031115.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_compras/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T031027.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_compras/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T031018.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_compras/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T030927.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_compras/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T030911.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_compras/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T030909.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_compras/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T030828.405.json
+
+###
+
+GET http://127.0.0.1:8000/get_compras/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T030822.405.json
+
+###
+
+GET http://127.0.0.1:8000/get_usuario/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T024129.405.json
+
+###
+
+GET http://127.0.0.1:8000/get_usuario/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T024127.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_usuario/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T023640.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_usuario/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T023636.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_usuario/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T023247.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_usuario/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T023232.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_usuario/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T023228.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_usuario/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T022533.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_usuario/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T022509.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_usuario/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T022505.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_usuario/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T022503.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T021325.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T020439.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_all_products/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T020416.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T014414.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T014301.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T014219.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T014216.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T013630.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T013551.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T013539.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T013514.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T013400.405.json
+
+###
+
+GET http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T013355.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_login/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T013335.405.json
+
+###
+
+POST http://127.0.0.1:8000/get_all_products/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T012621.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_all_products/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T124135.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_all_products/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8000/get_all_products/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-04-10T122605.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_all_products/?id=10
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-04-10T122549.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_all_products/?id=10
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-04-10T122357.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_all_products/?id=10
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T122303.200.json
+
+###
+
+POST http://127.0.0.1:8000/get_all_products/?id=10
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-10T122042.200.json
+
+###
+
