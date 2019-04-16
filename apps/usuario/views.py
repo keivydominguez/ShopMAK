@@ -1,37 +1,57 @@
-from django.http import HttpResponse
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from django.http import HttpResponse, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.parsers import JSONParser
 from .models import *
+from .serializers import *
 
+@csrf_exempt
+def Usuario_List(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = UsuarioSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
 
-class LoginList(APIView):
-    def post(self, request):
-        usuarios = Usuario.objects.all()
+@csrf_exempt
+def Usuario_detalle(request, pk):
+    try:
+        usuario = Usuario.objects.get(pk=pk)
+    except usuario.DoesNotExist:
+        return HttpResponse(status=404)
 
-        dic = {
-            'usario': str(usuarios.Usario.username),
-            'password': str(usuarios.Usario.password),
-        }
+    if request.method == 'GET':
+        serializer = UsuarioSerializer(usuario)
+        return JsonResponse(serializer.data)
+    elif request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = UsuarioSerializer(usuario, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data)
+        return JsonResponse(serializer.errors, status=400)
+    elif request.method == 'DELETE':
+        usuario.delete()
+        return HttpResponse(status=400)
 
-        return Response(dic)
+@csrf_exempt
+def Usuario_Login(request, pk):
+    try:
+        usuario = User.objects.get(pk=pk)
+    except usuario.DoesNotExist:
+        return HttpResponse(status=404)
 
-class UsuarioList(APIView):
-    def post(self, request):
-        usuario = Usuario.objects.all()
+    if request.method == 'GET':
+        serializer = LoginSerializer(usuario)
+        return JsonResponse(serializer.data)
 
-        dic ={
-            'usuario': str(usuario.Usario.username),
-            'nombre': str(usuario.Usario.first_name),
-            'apellido': str(usuario.Usario.last_name),
-            'correo': str(usuario.Usario.email),
-            'telefono': usuario.Telefono,
-            'calle': usuario.Calle,
-            'colonia': usuario.Colonia,
-            'codigopostal': usuario.CodigoPostal,
-            'municipio': usuario.Municipio,
-            'estado': usuario.Estado,
-            'pais': usuario.Pais,
-
-        }
-
-        return Response(dic)
+@csrf_exempt
+def Usuario_Crear(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = CrearUsuarioSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
