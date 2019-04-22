@@ -1,6 +1,12 @@
-from django.http import HttpResponse, JsonResponse
+from _elementtree import ParseError
+
+from django.http import HttpResponse, JsonResponse, QueryDict
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.parsers import JSONParser
+from rest_framework import generics, parsers, viewsets
+from rest_framework.parsers import JSONParser, FileUploadParser, MultiPartParser, FormParser
+from rest_framework.response import Response
+from rest_framework.utils import json
+from rest_framework.views import APIView
 from .models import *
 from .serializers import *
 
@@ -80,3 +86,22 @@ def Whislist_detalle(request, pk):
             'mensaje': "Se borro con exito"
         }
         return HttpResponse(dic)
+
+class MultipartJsonParser(parsers.MultiPartParser):
+    def parse(self, stream, media_type=None, parser_context=None):
+        result = super().parse(
+            stream,
+            media_type=media_type,
+            parser_context=parser_context
+        )
+        data = {}
+        data = json.loads(result.data["data"])
+        qdict = QueryDict('', mutable=True)
+        qdict.update(data)
+        return parsers.DataAndFiles(qdict, result.files)
+
+class SubirImagen(viewsets.ModelViewSet):
+    serializer_class = ImageneSerializer
+    parser_classes = (MultipartJsonParser, parsers.JSONParser)
+    queryset = Imagenes.objects.all()
+    lookup_field = 'id'

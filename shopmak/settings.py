@@ -42,6 +42,8 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
+    'rest_framework.authtoken',
+    'django_filters',
 ]
 
 LOCAL_APPS = [
@@ -153,7 +155,13 @@ REST_FRAMEWORK = {
    # Use Django's standard `django.contrib.auth` permissions,
    # or allow read-only access for unauthenticated users.
    'DEFAULT_AUTHENTICATION_CLASSES': (
-       'rest_framework.authentication.TokenAuthentication',
+       'rest_framework.authentication.BasicAuthentication',
        'rest_framework.authentication.SessionAuthentication',
-   )
+   ),
+   'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated', ),
+   'DEFAULT_PARSER_CLASSES': (
+         'rest_framework.parsers.JSONParser',
+         'rest_framework.parsers.MultiPartParser',
+         'rest_framework.parsers.FileUploadParser', ),
 }

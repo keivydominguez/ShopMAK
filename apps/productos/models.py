@@ -15,7 +15,6 @@ class Productos(models.Model):
     Precio_producto = models.FloatField()
     Cantidad_producto = models.IntegerField()
     Descripcion_producto = models.TextField()
-    Foto_producto = models.CharField(max_length=50)
     Usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     Categorias = models.ForeignKey(Categorias, on_delete=models.CASCADE, null=True, blank=True)
     Status_producto = models.CharField(max_length=45)
@@ -29,3 +28,10 @@ class Favorito(models.Model):
 
     def __str__(self):
         return self.Productos.Nombre_producto
+
+class Imagenes(models.Model):
+    producto_id = models.ForeignKey(Productos, on_delete=models.CASCADE, null=True, blank=True)
+    imagen = models.ImageField(upload_to="img/")
+
+    def __str__(self):
+        return self.imagen
