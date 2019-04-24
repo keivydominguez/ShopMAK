@@ -18,10 +18,29 @@ def Producto_list(request):
         serializer = ProductoSerializer(producto, many=True)
         return JsonResponse(serializer.data, safe=False)
     elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = ProductoSerializer(data=data)
+        dic = {
+            "id": request.POST['id'],
+            "Nombre_producto": request.POST['Nombre_producto'],
+            "Marca_producto": request.POST['Marca_producto'],
+            'Modelo_producto': request.POST['Modelo_producto'],
+            'Precio_producto': request.POST['Precio_producto'],
+            'Cantidad_producto': request.POST['Cantidad_producto'],
+            'Descripcion_producto': request.POST['Descripcion_producto'],
+            'Usuario': request.POST['Usuario'],
+            'Categorias': request.POST['Categorias'],
+            'Status_producto': request.POST['Status_producto'],
+        }
+        #data = JSONParser().parse(request)
+        serializer = ProductoSerializer(data=dic)
         if serializer.is_valid():
             serializer.save()
+            #print(serializer.data["id"])
+            #aqui subes las imagenes
+            nuevoProducto = Productos.objects.get(pk=serializer.data["id"])
+            new_img=Imagenes()
+            new_img.producto_id=nuevoProducto
+            new_img.imagen=request.FILES['img']
+            new_img.save()
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
 
@@ -86,22 +105,3 @@ def Whislist_detalle(request, pk):
             'mensaje': "Se borro con exito"
         }
         return HttpResponse(dic)
-
-class MultipartJsonParser(parsers.MultiPartParser):
-    def parse(self, stream, media_type=None, parser_context=None):
-        result = super().parse(
-            stream,
-            media_type=media_type,
-            parser_context=parser_context
-        )
-        data = {}
-        data = json.loads(result.data["data"])
-        qdict = QueryDict('', mutable=True)
-        qdict.update(data)
-        return parsers.DataAndFiles(qdict, result.files)
-
-class SubirImagen(viewsets.ModelViewSet):
-    serializer_class = ImageneSerializer
-    parser_classes = (MultipartJsonParser, parsers.JSONParser)
-    queryset = Imagenes.objects.all()
-    lookup_field = 'id'

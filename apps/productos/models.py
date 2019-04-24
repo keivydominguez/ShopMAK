@@ -34,4 +34,4 @@ class Imagenes(models.Model):
     imagen = models.ImageField(upload_to="img/")
 
     def __str__(self):
-        return self.imagen
+        return str(self.imagen)

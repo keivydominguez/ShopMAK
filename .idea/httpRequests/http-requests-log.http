@@ -1,3 +1,83 @@
+POST http://127.0.0.1:8000/producto/?id=9374
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< /home/keivy/Imágenes/Captura de pantalla de 2019-04-22 10-18-19.png
+--null--
+
+###
+
+POST http://127.0.0.1:8000/producto/?id=9374
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< /home/keivy/Imágenes/Captura de pantalla de 2019-04-22 10-18-19.png
+--null--
+
+<> 2019-04-24T105615.500.html
+
+###
+
+POST http://127.0.0.1:8000/producto/?id=9374
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< /home/keivy/Imágenes/Captura de pantalla de 2019-04-22 10-18-19.png
+--null--
+
+###
+
+POST http://127.0.0.1:8000/producto/?id=9374
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< /home/keivy/Imágenes/Captura de pantalla de 2019-04-22 10-18-19.png
+--null--
+
+<> 2019-04-24T105553.500.html
+
+###
+
+POST http://127.0.0.1:8000/producto/?id=9374
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< /home/keivy/Imágenes/Captura de pantalla de 2019-04-22 10-18-19.png
+--null--
+
+<> 2019-04-24T105536.500.html
+
+###
+
+POST http://127.0.0.1:8000/producto/
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< /home/keivy/Imágenes/Captura de pantalla de 2019-04-22 10-18-19.png
+--null--
+
+<> 2019-04-24T104837.500.html
+
+###
+
 GET http://127.0.0.1:8000/get_producto_agregar/
 Accept: */*
 Cache-Control: no-cache
@@ -345,54 +425,6 @@ Accept: */*
 Cache-Control: no-cache
 
 <> 2019-04-10T030828.405.json
-
-###
-
-GET http://127.0.0.1:8000/get_compras/
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-04-10T030822.405.json
-
-###
-
-GET http://127.0.0.1:8000/get_usuario/
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-04-10T024129.405.json
-
-###
-
-GET http://127.0.0.1:8000/get_usuario/
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-04-10T024127.405.json
-
-###
-
-POST http://127.0.0.1:8000/get_usuario/
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-04-10T023640.405.json
-
-###
-
-POST http://127.0.0.1:8000/get_usuario/
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-04-10T023636.405.json
-
-###
-
-POST http://127.0.0.1:8000/get_usuario/
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-04-10T023247.405.json
 
 ###
 

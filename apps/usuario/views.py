@@ -80,3 +80,14 @@ class UsuarioListView(generics.ListAPIView):
     ordering_fields = ('is_active', 'username')
     ordering = ('username', )
     search_fields = ('username', 'first_name')
+
+@csrf_exempt
+def Login(request, pk):
+
+    if request.method == 'GET':
+        usuario = User.objects.get(pk=pk)
+        serializer = LoginSerializer(usuario)
+        print(usuario)
+        return JsonResponse(serializer.data)
+    else:
+        print("error")

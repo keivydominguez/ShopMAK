@@ -12,12 +12,8 @@ class WhislistSerializer(serializers.ModelSerializer):
         model = Favorito
         fields = ('id', 'Productos', 'Usuario')
 
-class ImageneSerializer(serializers.ModelSerializer):
+class ImagenSerializer(serializers.ModelSerializer):
     class Meta:
         model = Imagenes
-        fields = [
-            'producto_id',
-            'imagen'
-        ]
-    def create(self, validated_data):
-        return Imagenes.objects.create(**validated_data)
+        fields = ('producto_id', 'imagen')
+
