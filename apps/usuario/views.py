@@ -93,7 +93,10 @@ def login(request):
     user = authenticate(username=username, password=password)
     if not user:
         return JsonResponse({'error': 'error'}, status=404)
+    else:
+        usuario=User.objects.get(username=username)
     dic = {
-        "mensaje": "ok"
+        "usuario": str(usuario.pk),
+
     }
     return JsonResponse(dic, status=200)

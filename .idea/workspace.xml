@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea68cc31-6589-46c6-8b1c-d3b3a909bf94" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/usuario/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/usuario/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/usuario/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/usuario/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/usuario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/usuario/views.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -17,13 +14,16 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="shopmak" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/usuario/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="99" column="17" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
+            <state relative-caret-position="245">
+              <caret line="99" column="32" lean-forward="true" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -764,12 +764,12 @@
       <workItem from="1555943108932" duration="13248000" />
       <workItem from="1556066328468" duration="1612000" />
       <workItem from="1556116876413" duration="14333000" />
-      <workItem from="1556202194100" duration="4072000" />
+      <workItem from="1556202194100" duration="11676000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180686000" />
+    <option name="totallyTimeSpent" value="188290000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -786,20 +786,20 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.19872306" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24980047" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.32960895" />
       <window_info anchor="bottom" id="REST Client" order="0" sideWeight="0.5746209" weight="0.6628665" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="2" sideWeight="0.49834436" weight="0.32899022" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="4" sideWeight="0.49834436" weight="0.32899022" />
-      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.46767756" weight="0.3843648" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.5323224" side_tool="true" visible="true" weight="0.33713356" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5019952" side_tool="true" weight="0.32954547" />
-      <window_info anchor="bottom" id="Message" order="8" />
-      <window_info anchor="bottom" id="Find" order="9" weight="0.32843137" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.39869282" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" sideWeight="0.5331205" side_tool="true" visible="true" weight="0.29641694" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5019952" side_tool="true" weight="0.32954547" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.32843137" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.39869282" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4668795" weight="0.3843648" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.32736155" />
       <window_info anchor="right" id="SciView" order="0" />
       <window_info anchor="right" id="Database" order="1" />
@@ -1149,8 +1149,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/usuario/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="99" column="17" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
+        <state relative-caret-position="245">
+          <caret line="99" column="32" lean-forward="true" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
