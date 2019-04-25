@@ -1,15 +1,16 @@
-from django.contrib.auth import authenticate, login
+from tokenize import Token
+
+from django.contrib.auth import authenticate
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django_filters.rest_framework import DjangoFilterBackend
-from requests import Response
 from rest_framework import generics
 from django_filters import FilterSet
 from django_filters import rest_framework as filters
+from rest_framework.decorators import permission_classes, api_view
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.parsers import JSONParser
 from rest_framework.permissions import AllowAny
-from rest_framework.views import APIView
 
 from .models import *
 from .serializers import *
@@ -82,12 +83,17 @@ class UsuarioListView(generics.ListAPIView):
     search_fields = ('username', 'first_name')
 
 @csrf_exempt
-def Login(request, pk):
-
-    if request.method == 'GET':
-        usuario = User.objects.get(pk=pk)
-        serializer = LoginSerializer(usuario)
-        print(usuario)
-        return JsonResponse(serializer.data)
-    else:
-        print("error")
+@api_view(["POST"])
+@permission_classes((AllowAny,))
+def login(request):
+    username = request.data.get("username")
+    password = request.data.get("password")
+    if username is None or password is None:
+        return JsonResponse({'error': 'error '}, status=400)
+    user = authenticate(username=username, password=password)
+    if not user:
+        return JsonResponse({'error': 'error'}, status=404)
+    dic = {
+        "mensaje": "ok"
+    }
+    return JsonResponse(dic, status=200)

@@ -9,11 +9,6 @@ class UsuarioSerializer(serializers.ModelSerializer):
         model = Usuario
         fields = ('Usario', 'Telefono', 'Calle', 'Colonia', 'CodigoPostal', 'Municipio', 'Estado', 'Pais')
 
-class LoginSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ('username', 'password')
-
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
