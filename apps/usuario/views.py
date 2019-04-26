@@ -96,7 +96,10 @@ def login(request):
     else:
         usuario=User.objects.get(username=username)
     dic = {
-        "usuario": str(usuario.pk),
-
+        "id": str(usuario.pk),
+        "usuario": str(usuario),
+        "nombre": str(usuario.first_name),
+        "apellido": str(usuario.last_name),
+        "correo": str(usuario.email),
     }
     return JsonResponse(dic, status=200)

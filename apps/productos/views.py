@@ -1,7 +1,9 @@
 from _elementtree import ParseError
 
-from django.http import HttpResponse, JsonResponse, QueryDict
+from django.http import HttpResponse, JsonResponse, QueryDict, HttpResponseRedirect
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import ListView
 from rest_framework import generics, parsers, viewsets
 from rest_framework.parsers import JSONParser, FileUploadParser, MultiPartParser, FormParser
 from rest_framework.response import Response
@@ -10,7 +12,7 @@ from rest_framework.views import APIView
 from .models import *
 from .serializers import *
 
-
+#API
 @csrf_exempt
 def Producto_list(request):
     if request.method == 'GET':
@@ -105,3 +107,35 @@ def Whislist_detalle(request, pk):
             'mensaje': "Se borro con exito"
         }
         return HttpResponse(dic)
+
+#backofice
+class ProductotView(ListView):
+    model = Productos
+    template_name = "../templates/producto.html"
+
+def producto(request):
+    Producto = Productos.objects.all()
+    dic = {
+        "lista": producto,
+    }
+    return render(request, '../templates/producto.html', dic)
+
+def borrar_producto(request, pk):
+    borrar = Productos.objects.get(pk=pk)
+    borrar.delete()
+    return HttpResponseRedirect('/index/back/')
+
+def editar_producto(request, pk):
+    if request.method == "POST":
+        Producto = Productos.objects.get(pk=pk)
+        serializer = ProductoSerializer()
+        if serializer.is_valid():
+            pro = serializer.save()
+        return HttpResponseRedirect('/index/back/')
+    else:
+        Producto = Productos.objects.get(PK=pk)
+        serializer = ProductoSerializer(instance=Producto)
+        dic = {
+            "serializer_producto": serializer
+        }
+        return render(request, '../template/', dic)
