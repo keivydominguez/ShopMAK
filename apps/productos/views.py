@@ -1,24 +1,39 @@
-from _elementtree import ParseError
+import json
 
-from django.http import HttpResponse, JsonResponse, QueryDict, HttpResponseRedirect
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView
-from rest_framework import generics, parsers, viewsets
-from rest_framework.parsers import JSONParser, FileUploadParser, MultiPartParser, FormParser
-from rest_framework.response import Response
-from rest_framework.utils import json
-from rest_framework.views import APIView
-from .models import *
+from rest_framework.parsers import JSONParser
 from .serializers import *
-
+from .forms import *
+#192.168.2.106
 #API
 @csrf_exempt
 def Producto_list(request):
     if request.method == 'GET':
         producto = Productos.objects.all()
-        serializer = ProductoSerializer(producto, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        list = []
+        for foo in producto:
+
+            ProdDic = {
+                "id": foo.id,
+                "Nombre_producto": foo.Nombre_producto,
+                "Marca_producto": foo.Marca_producto,
+                "Modelo_producto": foo.Modelo_producto,
+                "Precio_producto": foo.Precio_producto,
+                "Cantidad_producto": foo.Cantidad_producto,
+                "Descripcion_producto": foo.Descripcion_producto,
+                "Usuario": str(foo.Usuario),
+                "Categorias": str(foo.Categorias),
+                "Status_producto": foo.Status_producto,
+                "img": [
+                    "https://picsum.photos/id/617/200/300?grayscale",  "https://picsum.photos/id/617/200/300?grayscale",  "https://picsum.photos/id/617/200/300?grayscale",  "https://picsum.photos/id/617/200/300?grayscale"
+                ]
+
+            }
+            ProdDic = json.dumps(ProdDic)
+        return HttpResponse(ProdDic, content_type='application/json')
     elif request.method == 'POST':
         dic = {
             "id": request.POST['id'],
@@ -111,7 +126,7 @@ def Whislist_detalle(request, pk):
 #backofice
 class ProductotView(ListView):
     model = Productos
-    template_name = "../templates/producto.html"
+    template_name = "../templates/index.html"
 
 def producto(request):
     Producto = Productos.objects.all()
@@ -127,15 +142,16 @@ def borrar_producto(request, pk):
 
 def editar_producto(request, pk):
     if request.method == "POST":
-        Producto = Productos.objects.get(pk=pk)
-        serializer = ProductoSerializer()
-        if serializer.is_valid():
-            pro = serializer.save()
-        return HttpResponseRedirect('/index/back/')
+        producto = Productos.objects.get(pk=pk)
+        productoForm = ProductoForm(request.POST, instance=producto)
+        if productoForm.is_valid():
+            productoForm.save()
+            return HttpResponseRedirect('/index/back/')
     else:
-        Producto = Productos.objects.get(PK=pk)
-        serializer = ProductoSerializer(instance=Producto)
+        producto = Productos.objects.get(pk=pk)
+        productoForm = ProductoForm(instance=producto)
+
         dic = {
-            "serializer_producto": serializer
+            "productoForm" : productoForm
         }
-        return render(request, '../template/', dic)
+        return render(request, '../templates/FormProducto.html', dic)

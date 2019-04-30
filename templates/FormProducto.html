@@ -16,40 +16,46 @@
             <h1 class="mt-4">Formulario Producto</h1>
             <hr class="mt-0 mb-8">
             {% block content %}
-            <form>
-                {% csrf_token %}
-              <div class="form-row">
-                <div class="col-md-4 mb-3">
-                  <label for="validationServer01">Nombre {{ serializer_producto.Nombre_producto }}</label>
-                </div>
-                  <div class="col-md-4 mb-3">
-                  <label for="validationServer01">Marca {{ serializer_producto.Marca_producto }}</label>
-                </div>
-                  <div class="col-md-4 mb-3">
-                  <label for="validationServer01">Modelo {{ serializer_producto.Modelo_producto }}</label>
-                </div>
-                  <div class="col-md-4 mb-3">
-                  <label for="validationServer01">Precio {{ serializer_producto.Precio_producto }}</label>
-                </div>
-                  <div class="col-md-4 mb-3">
-                  <label for="validationServer01">Cantidad {{ serializer_producto.Cantidad_producto }}</label>
-                </div><div class="col-md-4 mb-3">
-                  <label for="validationServer01">Descripcion {{ serializer_producto.Descripcion_producto }}</label>
-                </div>
-                  <div class="col-md-4 mb-3">
-                  <label for="validationServer01">Usuario {{ serializer_producto.Usuario }}</label>
-                </div>
-                  <div class="col-md-4 mb-3">
-                  <label for="validationServer01">Categoria {{ serializer_producto.Categorias }}</label>
-                </div>
-                  <div class="col-md-4 mb-3">
-                  <label for="validationServer01">Status {{ serializer_producto.Status_producto }}</label>
-                </div>
-              </div>
-              <button class="btn btn-primary" type="submit">Guardar</button>
-            </form>
-            {% endblock %}
+                <form action="" method="post">
+                    {% csrf_token %}
+                         <div class="form-group row">
+                             <div class="col-md-4">
+                            <label>Nombre {{ productoForm.Nombre_producto }}</label>
+                         </div>
+                             <div class="col-md-4">
+                             <label>Marca {{ productoForm.Marca_producto }}</label>
+                             </div>
+                             <div class="col-md-4">
+                             <label>Modelo {{ productoForm.Modelo_producto }}</label>
+                             </div>
+                         </div>
+                         <div class="form-group row">
+                             <div class="col-md-4">
+                             <label>Precio {{ productoForm.Precio_producto }}</label>
+                             </div>
+                        <div class="col-md-4">
+                            <label>Cantidad {{ productoForm.Cantidad_producto }}</label>
+                         </div>
+                         </div>
+                         <div class="form-group row">
+                             <label>Descripcion {{ productoForm.Descripcion_producto }}</label>
+                         </div>
+                             <div class="form-group row">
+                              <div class="col-md-4">
+                             <label>Usuario {{ productoForm.Usuario }}</label>
+                             </div>
+                             <div class="col-md-4">
+                             <label>Categoria {{ productoForm.Categorias }}</label>
+                         </div>
+                        <div class="col-md-4">
+                            <label>Status {{ productoForm.Status_producto }}</label>
+                         </div>
+                         </div>
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                        <a class="btn btn-danger" href="/index/back/">Cancelar</a>
+                </form>
 
+            {% endblock %}
         </div>
     </div>
 </div>
