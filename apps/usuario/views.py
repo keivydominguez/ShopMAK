@@ -1,8 +1,10 @@
 from tokenize import Token
 
 from django.contrib.auth import authenticate
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import ListView
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
 from django_filters import FilterSet
@@ -11,9 +13,8 @@ from rest_framework.decorators import permission_classes, api_view
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.parsers import JSONParser
 from rest_framework.permissions import AllowAny
-
-from .models import *
 from .serializers import *
+from .forms import *
 
 @csrf_exempt
 def Usuario_List(request):
@@ -103,3 +104,36 @@ def login(request):
         "correo": str(usuario.email),
     }
     return JsonResponse(dic, status=200)
+
+#backofici
+class UsarioView(ListView):
+    model = User
+    template_name = '../templates/usuario.html'
+
+def usuario(request):
+    usuario = User.objects.all()
+    dic = {
+        "lista": usuario
+    }
+    return render(request, '../templates/usuario.html')
+
+def borrar_usuario(request, pk):
+    borrar = User.objects.get(pk=pk)
+    borrar.delete()
+    return HttpResponseRedirect('/usuario/back/')
+
+def editar_usuario(request, pk):
+    if request.method == "POST":
+        usuario = User.objects.get(pk=pk)
+        usuarioform = UsuarioForm(request.POST, instance=usuario)
+        if usuarioform.is_valid():
+            usuarioform.save()
+            return HttpResponseRedirect('/usuario/back/')
+    else:
+        usuario = User.objects.get(pk=pk)
+        usuarioform = UsuarioForm(instance=usuario)
+        dic = {
+            "usuarioform": usuarioform
+        }
+        return render(request, '../templates/FormUsuario.html', dic)
+

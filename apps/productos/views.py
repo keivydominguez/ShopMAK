@@ -126,7 +126,7 @@ def Whislist_detalle(request, pk):
 #backofice
 class ProductotView(ListView):
     model = Productos
-    template_name = "../templates/index.html"
+    template_name = "../templates/producto.html"
 
 def producto(request):
     Producto = Productos.objects.all()

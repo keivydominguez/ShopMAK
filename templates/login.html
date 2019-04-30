@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+            <div class="card-body">
+                <h5 class="card-title text-center">Iniciar Sesion</h5>
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <p><label>Nombre de usuario:</label></p>
+                    <p><label>Contraseña:</label></p>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
