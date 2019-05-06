@@ -13,9 +13,8 @@ from .forms import *
 def Producto_list(request):
     if request.method == 'GET':
         producto = Productos.objects.all()
-        list = []
+        lista = []
         for foo in producto:
-
             ProdDic = {
                 "id": foo.id,
                 "Nombre_producto": foo.Nombre_producto,
@@ -28,12 +27,15 @@ def Producto_list(request):
                 "Categorias": str(foo.Categorias),
                 "Status_producto": foo.Status_producto,
                 "img": [
-                    "https://picsum.photos/id/617/200/300?grayscale",  "https://picsum.photos/id/617/200/300?grayscale",  "https://picsum.photos/id/617/200/300?grayscale",  "https://picsum.photos/id/617/200/300?grayscale"
+                    "https://picsum.photos/id/617/200/300?grayscale",
+                    "https://picsum.photos/id/617/200/300?grayscale",
+                    "https://picsum.photos/id/617/200/300?grayscale",
+                    "https://picsum.photos/id/617/200/300?grayscale"
                 ]
-
             }
             ProdDic = json.dumps(ProdDic)
-        return HttpResponse(ProdDic, content_type='application/json')
+            print(ProdDic)
+        return JsonResponse(ProdDic, content_type='application/json')
     elif request.method == 'POST':
         dic = {
             "id": request.POST['id'],

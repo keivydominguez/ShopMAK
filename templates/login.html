@@ -10,10 +10,10 @@
         <div class="card card-signin my-5">
             <div class="card-body">
                 <h5 class="card-title text-center">Iniciar Sesion</h5>
-                <form method="post" action="{% url 'login' %}">
+                <form method="post" action="">
                     {% csrf_token %}
-                    <p><label>Nombre de usuario:</label></p>
-                    <p><label>Contraseña:</label></p>
+                    <p><label>Nombre de usuario: {{ form_login.name_user }}</label></p>
+                    <p><label>Contraseña: {{ form_login.password_user }}</label></p>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
                 </form>
             </div>

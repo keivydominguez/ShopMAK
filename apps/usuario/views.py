@@ -24,6 +24,14 @@ def Usuario_List(request):
         return JsonResponse(serializer.data, safe=False)
 
 @csrf_exempt
+def User_List(request):
+    if request.method == 'GET':
+        user = User.objects.all()
+        serializer = FilterUsuarioSerializer(user, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+
+@csrf_exempt
 def Usuario_detalle(request, pk):
     try:
         usuario = Usuario.objects.get(pk=pk)
@@ -137,3 +145,27 @@ def editar_usuario(request, pk):
         }
         return render(request, '../templates/FormUsuario.html', dic)
 
+def LoginView(request):
+    form = LoginForm(request.POST or None)
+    if form.is_valid():
+        data = form.cleaned_data
+        nombre_usuario = data.get("name_user")
+        contrasena_usuario = data.get("password_user")
+        acceso = authenticate(username=nombre_usuario, password=contrasena_usuario)
+        if acceso is not None:
+            return render(request, '../templates/producto.html')
+        else:
+            return HttpResponse("Usuario incorrecto")
+    else:
+        form = LoginForm()
+    var = {
+        "form_login": form
+    }
+    return render(request, '../templates/login.html', var)
+
+def perfil(request, pk):
+    perfil1 = User.objects.get(pk=pk)
+    dic = {
+        "lista": perfil1
+    }
+    return render(request, '../templates/usuario.html')

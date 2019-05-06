@@ -1,46 +1,46 @@
 {% extends 'base.html' %}
-{% block formpago %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-8">
-            <h1 class="mt-4"> Formulario Pago</h1>
-            <hr class="mt-0 mb-8">
-            {% block content %}
-                <form action="" method="post">
-                {% csrf_token %}
-                <div class="form-group row">
-                    <div class="col-md-4">
-                        <label>Producto {{ pagoform.Productos }}</label>
+{% block contet %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <h1 class="mt-4"> Formulario Pago</h1>
+                <hr class="mt-0 mb-8">
+                {% block content %}
+                    <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label>Producto {{ pagoform.Productos }}</label>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-4">
-                        <label>Envio {{ pagoform.Envio }}</label>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label>Envio {{ pagoform.Envio }}</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Total a Pagar {{ pagoform.Total }}</label>
+                        </div>
+                        <div class="col-md-4">
+                             <label>Nombre del la Tarjeta {{ pagoform.Nombre_tarjeta }}</label>
+                        </div>
+                        <div class="col-md-4">
+                             <label>Mes {{ pagoform.Mes_tarjeta }}</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Año {{ pagoform.año_tarjeta }}</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Codigo de Seguridad {{ pagoform.CodigoSeg_Tarjeta }}</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Numero de la Tarjeta {{ pagoform.Numero_tarjeta }}</label>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <label>Total a Pagar {{ pagoform.Total }}</label>
-                    </div>
-                    <div class="col-md-4">
-                         <label>Nombre del la Tarjeta {{ pagoform.Nombre_tarjeta }}</label>
-                    </div>
-                    <div class="col-md-4">
-                         <label>Mes {{ pagoform.Mes_tarjeta }}</label>
-                    </div>
-                    <div class="col-md-4">
-                        <label>Año {{ pagoform.año_tarjeta }}</label>
-                    </div>
-                    <div class="col-md-4">
-                        <label>Codigo de Seguridad {{ pagoform.CodigoSeg_Tarjeta }}</label>
-                    </div>
-                    <div class="col-md-4">
-                        <label>Numero de la Tarjeta {{ pagoform.Numero_tarjeta }}</label>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-success">Guardar</button>
-                <a class="btn btn-danger" href="/pago/back/">Cancelar</a>
-                </form>
-            {% endblock %}
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                    <a class="btn btn-danger" href="/pago/back/">Cancelar</a>
+                    </form>
+                {% endblock %}
+            </div>
         </div>
     </div>
-</div>
-{% endblock %}
+{% endblock contet %}

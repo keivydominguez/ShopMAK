@@ -1,52 +1,52 @@
 {% extends 'base.html' %}
-{% block formproducto %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-8">
-            <h1 class="mt-4">Formulario Producto</h1>
-            <hr class="mt-0 mb-8">
-            {% block content %}
-                <form action="" method="post">
-                    {% csrf_token %}
-                         <div class="form-group row">
-                             <div class="col-md-4">
-                            <label>Nombre {{ productoForm.Nombre_producto }}</label>
-                         </div>
-                             <div class="col-md-4">
-                             <label>Marca {{ productoForm.Marca_producto }}</label>
-                             </div>
-                             <div class="col-md-4">
-                             <label>Modelo {{ productoForm.Modelo_producto }}</label>
-                             </div>
-                         </div>
-                         <div class="form-group row">
-                             <div class="col-md-4">
-                             <label>Precio {{ productoForm.Precio_producto }}</label>
-                             </div>
-                        <div class="col-md-4">
-                            <label>Cantidad {{ productoForm.Cantidad_producto }}</label>
-                         </div>
-                         </div>
-                         <div class="form-group row">
-                             <label>Descripcion {{ productoForm.Descripcion_producto }}</label>
-                         </div>
+{% block contet %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <h1 class="mt-4">Formulario Producto</h1>
+                <hr class="mt-0 mb-8">
+                {% block content %}
+                    <form action="" method="post">
+                        {% csrf_token %}
                              <div class="form-group row">
-                              <div class="col-md-4">
-                             <label>Usuario {{ productoForm.Usuario }}</label>
+                                 <div class="col-md-4">
+                                <label>Nombre {{ productoForm.Nombre_producto }}</label>
                              </div>
-                             <div class="col-md-4">
-                             <label>Categoria {{ productoForm.Categorias }}</label>
-                         </div>
-                        <div class="col-md-4">
-                            <label>Status {{ productoForm.Status_producto }}</label>
-                         </div>
-                         </div>
-                        <button type="submit" class="btn btn-success">Guardar</button>
-                        <a class="btn btn-danger" href="/index/back/">Cancelar</a>
-                </form>
+                                 <div class="col-md-4">
+                                 <label>Marca {{ productoForm.Marca_producto }}</label>
+                                 </div>
+                                 <div class="col-md-4">
+                                 <label>Modelo {{ productoForm.Modelo_producto }}</label>
+                                 </div>
+                             </div>
+                             <div class="form-group row">
+                                 <div class="col-md-4">
+                                 <label>Precio {{ productoForm.Precio_producto }}</label>
+                                 </div>
+                            <div class="col-md-4">
+                                <label>Cantidad {{ productoForm.Cantidad_producto }}</label>
+                             </div>
+                             </div>
+                             <div class="form-group row">
+                                 <label>Descripcion {{ productoForm.Descripcion_producto }}</label>
+                             </div>
+                                 <div class="form-group row">
+                                  <div class="col-md-4">
+                                 <label>Usuario {{ productoForm.Usuario }}</label>
+                                 </div>
+                                 <div class="col-md-4">
+                                 <label>Categoria {{ productoForm.Categorias }}</label>
+                             </div>
+                            <div class="col-md-4">
+                                <label>Status {{ productoForm.Status_producto }}</label>
+                             </div>
+                             </div>
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                            <a class="btn btn-danger" href="/index/back/">Cancelar</a>
+                    </form>
 
-            {% endblock %}
+                {% endblock %}
+            </div>
         </div>
     </div>
-</div>
-{% endblock %}
+{% endblock contet %}

@@ -7,6 +7,7 @@
           <option value="django.db.models.OneToManyField" />
           <option value="shopmak.apps.DjangoSuitConfig" />
           <option value="shopmak.urls.frontend" />
+          <option value="apps.soap.soap_client.suds" />
         </list>
       </option>
     </inspection_tool>
