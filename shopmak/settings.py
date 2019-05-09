@@ -44,6 +44,7 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters',
+    'corsheaders',
 ]
 
 LOCAL_APPS = [
@@ -57,11 +58,13 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'apps.productos.cors.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'shopmak.urls'
@@ -138,6 +141,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#CORS_ORIGIN_WHITELIST = 'http://192.168.2.106:8000',
+
 SUIT_CONFIG = {
     'ADMIN_NAME': 'ShopMAK',
     'MENU_ICONS': {
@@ -150,6 +155,20 @@ SUIT_CONFIG = {
 }
 
 
+# --------------------- MIDDLEWARES -----------------------
+MIDDLEWARE_CLASSES = (
+   # 'django.middleware.cache.UpdateCacheMiddleware',#sistema de cache
+   'corsheaders.middleware.CorsMiddleware',  # se habilito para el cors/ para tener acceso a esta api desde afuera
+   'django.middleware.common.CommonMiddleware',
+   # 'livereload.middleware.LiveReloadScript',
+   'django.contrib.sessions.middleware.SessionMiddleware',
+   'django.middleware.csrf.CsrfViewMiddleware',
+   'django.contrib.auth.middleware.AuthenticationMiddleware',
+   'django.contrib.messages.middleware.MessageMiddleware',
+)
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = False
 
 REST_FRAMEWORK = {
    # Use Django's standard `django.contrib.auth` permissions,
@@ -165,3 +184,4 @@ REST_FRAMEWORK = {
          'rest_framework.parsers.MultiPartParser',
          'rest_framework.parsers.FileUploadParser', ),
 }
+

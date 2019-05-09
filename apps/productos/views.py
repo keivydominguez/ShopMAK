@@ -30,12 +30,13 @@ def Producto_list(request):
                     "https://picsum.photos/id/617/200/300?grayscale",
                     "https://picsum.photos/id/617/200/300?grayscale",
                     "https://picsum.photos/id/617/200/300?grayscale",
-                    "https://picsum.photos/id/617/200/300?grayscale"
-                ]
+                    "https://picsum.photos/id/617/200/300?grayscale",
+                ],
             }
-            ProdDic = json.dumps(ProdDic)
-            print(ProdDic)
-        return JsonResponse(ProdDic, content_type='application/json')
+            lista.append(ProdDic)
+        lista= json.dumps(lista)
+
+        return HttpResponse(lista, content_type='application/json')
     elif request.method == 'POST':
         dic = {
             "id": request.POST['id'],
