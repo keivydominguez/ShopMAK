@@ -31,7 +31,7 @@ class Favorito(models.Model):
 
 class Imagenes(models.Model):
     producto_id = models.ForeignKey(Productos, on_delete=models.CASCADE, null=True, blank=True)
-    imagen = models.ImageField(upload_to="img/")
+    imagen = models.ImageField(upload_to="media/")
 
     def __str__(self):
         return str(self.imagen)

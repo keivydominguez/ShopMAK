@@ -14,4 +14,3 @@ admin.site.register(Categorias)
 admin.site.register(Favorito, FavoritoAdmin)
 
 admin.site.register(Imagenes)
-

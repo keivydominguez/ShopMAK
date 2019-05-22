@@ -45,6 +45,7 @@ THIRD_PARTY_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'corsheaders',
+    'storages',
 ]
 
 LOCAL_APPS = [
@@ -139,7 +140,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 #CORS_ORIGIN_WHITELIST = 'http://192.168.2.106:8000',
 
@@ -185,3 +186,31 @@ REST_FRAMEWORK = {
          'rest_framework.parsers.FileUploadParser', ),
 }
 
+#s3
+AWS_LOCATION= 'static'
+AWS_ACCESS_KEY_ID ='AKIA45ZSZI7A3HYRBGGN'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME ='shopmark-keivi'
+AWS_S3_CUSTOM_DOMAIN='%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_URL='https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+
+
+
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+STATICFILES_FINDERS = (
+   'django.contrib.staticfiles.finders.FileSystemFinder',
+   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+AWS_DEFAULT_ACL = None

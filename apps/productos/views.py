@@ -7,6 +7,9 @@ from django.views.generic import ListView
 from rest_framework.parsers import JSONParser
 from .serializers import *
 from .forms import *
+
+
+from PIL import Image
 #192.168.2.106
 #API
 @csrf_exempt
@@ -15,6 +18,13 @@ def Producto_list(request):
         producto = Productos.objects.all()
         lista = []
         for foo in producto:
+            imagen = Imagenes.objects.filter(producto_id=foo)
+            Lisimagen = []
+            for imagenfor in imagen:
+                #Lisimagen.append(imagenfor.imagen)
+                ruta = "https://shopmark-keivi.s3.amazonaws.com/static/" + str(imagenfor.imagen)
+                Lisimagen.append(ruta)
+
             ProdDic = {
                 "id": foo.id,
                 "Nombre_producto": foo.Nombre_producto,
@@ -26,18 +36,15 @@ def Producto_list(request):
                 "Usuario": str(foo.Usuario),
                 "Categorias": str(foo.Categorias),
                 "Status_producto": foo.Status_producto,
-                "img": [
-                    "https://picsum.photos/id/617/200/300?grayscale",
-                    "https://picsum.photos/id/617/200/300?grayscale",
-                    "https://picsum.photos/id/617/200/300?grayscale",
-                    "https://picsum.photos/id/617/200/300?grayscale",
-                ],
+                "img": str(Lisimagen),
             }
             lista.append(ProdDic)
         lista= json.dumps(lista)
 
         return HttpResponse(lista, content_type='application/json')
     elif request.method == 'POST':
+
+
         dic = {
             "id": request.POST['id'],
             "Nombre_producto": request.POST['Nombre_producto'],
@@ -53,6 +60,9 @@ def Producto_list(request):
         #data = JSONParser().parse(request)
         serializer = ProductoSerializer(data=dic)
         if serializer.is_valid():
+            #print(request.FILES['img'])
+            #imagen = Image.open(request.FILES['img'])
+            #imagen.show()
             serializer.save()
             #print(serializer.data["id"])
             #aqui subes las imagenes
